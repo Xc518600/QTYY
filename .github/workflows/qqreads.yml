@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: WWS321/qqreadworkflow
+          repository: Xc518600/QQYD
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -43,5 +43,5 @@ jobs:
           npm install tough-cookie
       - name: '运行 【QQ阅读】'
         run: |
-          node Scripts/qqreads.js
+          node qqreads.js
         
