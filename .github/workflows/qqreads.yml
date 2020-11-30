@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: Xc518600/QQYD
+          repository: WWS321/qqreadworkflow
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
