@@ -1,47 +1,49 @@
+    
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: qqreads
+name: 企鹅读书
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/11 * * * *'
+     - cron: '*/11 * * * *'
   watch:
     types: started
-  repository_dispatch:
-    types: qqreads
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        QQREAD_HEADER: ${{ secrets.QQREAD_HEADER }}
+        QQREAD_BODY: ${{ secrets.QQREAD_BODY }}
         QQREAD_TIMEURL: ${{ secrets.QQREAD_TIMEURL }}
-        QQREAD_TIMEHEADER: ${{ secrets.QQREAD_TIMEHEADER }}
+        QQREAD_TIMEHD: ${{ secrets.QQREAD_TIMEHD }}
+        
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          repository: Xc518600/QQYD
-      - name: Use Node.js ${{ matrix.node-version }}
+        run: |
+          git clone https://github.com/ziye12/JavaScript.git ~/JavaScript
+      - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Cache node_modules
-        uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
+          node-version: 12.x
       - name: npm install
+        if: env.QQREAD_TIMEHD
         run: |
+          cd ~/JavaScript
           npm install
-          npm install got
-          npm install tough-cookie
-      - name: '运行 【QQ阅读】'
+      - name: '运行 【企鹅读书】'
+        if: env.QQREAD_TIMEHD
         run: |
-          node qqreads.js
-        
+          cd ~/JavaScript
+          node Task/qqreads.js
+        env:
+          
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
+          BARK_SOUND: ${{ secrets.BARK_SOUND }}
+          DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
+          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
