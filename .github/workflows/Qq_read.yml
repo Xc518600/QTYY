@@ -1,4 +1,4 @@
-name: 企鹅读书
+name: QQ阅读
 
 on:
   workflow_dispatch:
