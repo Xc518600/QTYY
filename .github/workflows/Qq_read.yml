@@ -25,6 +25,6 @@ jobs:
         run: pip install -r ./requirements.txt 
         
       - name: '运行【企鹅读书】' 
-        run: python3 ./scripts/qq_read.py 
+        run: python3 ./qq_read.py 
         env:
             CONFIG: ${{ secrets.CONFIG }}
