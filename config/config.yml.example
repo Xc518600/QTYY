@@ -1,5 +1,5 @@
 name: TNanko's Scripts Config File
-version: 1.2.3
+version: 1.2.4
 skip_check_config_version: false # 默认不跳过配置文件的版本检测
 
 # 消息推送
@@ -12,8 +12,8 @@ notify:
       BARK_MACHINE_CODE:
     telegram_bot:
       # 暂时自行百度google
-      TG_BOT_TOKEN:
-      TG_USER_ID:
+      TG_BOT_TOKEN:1225192402:AAEleeSMa875UmhdrYO0OQUciV4zaqzRxRY
+      TG_USER_ID:965408964 
     dingding_bot:
       # 钉钉机器人，参考教程：https://ding-doc.dingtalk.com/doc#/serverapi2/qf2nxq 在"安全设置"中选择"加签"（必须勾选），其他不懂不要勾选
       DD_BOT_ACCESS_TOKEN:
@@ -25,10 +25,10 @@ notify:
 
 # 脚本配置信息
 jobs:
-  qq_read: true
-    # 使用前请阅读 https://raw.githubusercontent.com/TNanko/Scripts/master/scripts/qq_read.py 前30行使用说明
-    enable: false # true 启用脚本； false 不启用脚本（默认不启用脚本）
-    version: 1.1.0
+  qq_read:
+    # 使用前请阅读 https://github.com/TNanko/Scripts/blob/master/docs/qq_read.md
+    enable: true # true 启用脚本； false 不启用脚本（默认不启用脚本）
+    version: 1.3.2
     skip_check_script_version: false # 默认不跳过版本检测
     notify: false # true 启用消息推送； false 不启用消息推送（默认不发消息推送）
     notify_mode:  # 如果全都配置了，可以根据自身需求进行消息推送方式的选择，不需要的可以注释掉或者删除。由于 bark 消息长度的限制，不推荐 bark
@@ -40,20 +40,28 @@ jobs:
       UPLOAD_TIME: 5 # 每次上传阅读时长（单位分钟）
       MAX_READ_TIME: 600 # 每日最大阅读时长（单位分钟）
       ACCOUNTS:
-          # 多账号，将下面三个参数复制一遍，例子已经写好自行替换，注意冒号后面的空格，空格，空格！（建议在文本编辑器上输入）。
-          # 进书库选择一本书，阅读几秒钟，将抓到的 headers ， body 和 书籍 url ，分别填到下方的 HEADERS ， BODY 和 BOOK_URL （注意冒号后面的空格，不要带引号！）
-        - HEADERS: {"ywsession":"08nexxxxxxxxxx6kn6hx","Cookie":"ywguid=2xxxxxxxx8;ywkey=ywbxxxxxurwjS;platform=ios;channel=mqqmina;mpVersion=0.30.0;qq_ver=8.4.17;os_ver=iOS 14.2;mpos_ver=1.21.0;platform=ios;openid=B9A021EXXXXXXXXXXX18348A2F779","Connection":"keep-alive","Content-Type":"application/json","Accept":"*/*","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.17.638 CFNetwork/1206 Darwin/20.1.0","Referer":"https://appservice.qq.com/1110657249/0.30.0/page-frame.html","Accept-Language":"zh-cn","Accept-Encoding":"gzip, deflate, br","mpversion":"0.30.0"}
-          BODY: {"common":{"appid":1xxxxxx94,"areaid":5,"qq_ver":"8.4.17","os_ver":"iOS 14.1","mp_ver":"0.31.0","mpos_ver":"1.21.0","brand":"iPhone","model":"iPhone 12<iPhone13,2>","screenWidth":390,"screenHeight":844,"windowWidth":390,"windowHeight":761,"openid":"7E97DE3XXXXXXXXXXXX6C64DE9","guid":xxxxxxxxxx,"session":"d06xxxxxxxxxxxsc8w","scene":1132,"source":"wza0xxxxxxx002","hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookDetail_chapter_slide_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"34207118","cid":"1"},"dis":1607349651957,"ext6":93,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"34207118","bookStatus":0,"bookPay":1,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"bookLib2_bookList_bookClick_C_0_34207118"}]}
-          BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=3001&refer=-1&bid=30544815&readTime=2685&read_type=0&conttype=1&read_status=0&chapter_info=[{"65":{"readTime":2685,"pay_status":0}}]&sp=-1
-          WITHDRAW: false  
-          HOSTING_MODE: false 
-        - HEADERS: {"ywsession":"08nexxxxxxxxxx6kn6hx","Cookie":"ywguid=2xxxxxxxx8;ywkey=ywbxxxxxurwjS;platform=ios;channel=mqqmina;mpVersion=0.30.0;qq_ver=8.4.17;os_ver=iOS 14.2;mpos_ver=1.21.0;platform=ios;openid=B9A021EXXXXXXXXXXX18348A2F779","Connection":"keep-alive","Content-Type":"application/json","Accept":"*/*","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.17.638 CFNetwork/1206 Darwin/20.1.0","Referer":"https://appservice.qq.com/1110657249/0.30.0/page-frame.html","Accept-Language":"zh-cn","Accept-Encoding":"gzip, deflate, br","mpversion":"0.30.0"}
-          BODY: {"common":{"appid":1xxxxxx94,"areaid":5,"qq_ver":"8.4.17","os_ver":"iOS 14.1","mp_ver":"0.31.0","mpos_ver":"1.21.0","brand":"iPhone","model":"iPhone 12<iPhone13,2>","screenWidth":390,"screenHeight":844,"windowWidth":390,"windowHeight":761,"openid":"7E97DE3XXXXXXXXXXXX6C64DE9","guid":xxxxxxxxxx,"session":"d06xxxxxxxxxxxsc8w","scene":1132,"source":"wza0xxxxxxx002","hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookDetail_chapter_slide_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"34207118","cid":"1"},"dis":1607349651957,"ext6":93,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"34207118","bookStatus":0,"bookPay":1,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"bookLib2_bookList_bookClick_C_0_34207118"}]}
-          BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=3001&refer=-1&bid=30544815&readTime=2685&read_type=0&conttype=1&read_status=0&chapter_info=[{"65":{"readTime":2685,"pay_status":0}}]&sp=-1
+        - HEADERS: {"ywsession":"6wz2f27lhkkitg6474qanlwcposb0kuh","Cookie":"ywguid=7734834;ywkey=ywdJQw7IaYjw;platform=ios;channel=mqqmina;mpVersion=0.32.5;qq_ver=8.4.17;os_ver=iOS 14.1;mpos_ver=1.21.0;platform=ios;openid=CD4F6B1DBAB7E87857EDF7E2A9678561","Connection":"keep-alive","Content-Type":"application/json","Accept":"*/*","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.17.638 CFNetwork/1197 Darwin/20.0.0","Referer":"https://appservice.qq.com/1110657249/0.32.5/page-frame.html","Accept-Language":"zh-cn","Accept-Encoding":"gzip, deflate, br","mpversion":"0.32.5"}
+          BODY: {"common":{"appid":1450024394,"areaid":5,"qq_ver":"8.4.17","os_ver":"iOS 14.1","mp_ver":"0.32.5","mpos_ver":"1.21.0","brand":"iPhone","model":"iPhone 6Plus<iPhone8,2>","screenWidth":414,"screenHeight":736,"windowWidth":414,"windowHeight":687,"openid":"CD4F6B1DBAB7E87857EDF7E2A9678561","guid":7734834,"session":"6wz2f27lhkkitg6474qanlwcposb0kuh","scene":1132,"source":-1,"hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookStore_newCI_unit_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"236652","cid":"1"},"dis":1607533714045,"ext6":77,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"236652","bookStatus":1,"bookPay":0,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"1132_236652"}]}
+          BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=1132&refer=pages%2Findex%2Findex&bid=236652&readTime=7912&read_type=0&conttype=1&read_status=0&chapter_info=%5B%7B%221%22%3A%7B%22readTime%22%3A7912%2C%22pay_status%22%3A0%2C%22is_tail%22%3A0%7D%7D%5D&sp=-1
           WITHDRAW: true
-          HOSTING_MODE: false 
-        - HEADERS: {"ywsession":"08nexxxxxxxxxx6kn6hx","Cookie":"ywguid=2xxxxxxxx8;ywkey=ywbxxxxxurwjS;platform=ios;channel=mqqmina;mpVersion=0.30.0;qq_ver=8.4.17;os_ver=iOS 14.2;mpos_ver=1.21.0;platform=ios;openid=B9A021EXXXXXXXXXXX18348A2F779","Connection":"keep-alive","Content-Type":"application/json","Accept":"*/*","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.17.638 CFNetwork/1206 Darwin/20.1.0","Referer":"https://appservice.qq.com/1110657249/0.30.0/page-frame.html","Accept-Language":"zh-cn","Accept-Encoding":"gzip, deflate, br","mpversion":"0.30.0"}
-          BODY: {"common":{"appid":1xxxxxx94,"areaid":5,"qq_ver":"8.4.17","os_ver":"iOS 14.1","mp_ver":"0.31.0","mpos_ver":"1.21.0","brand":"iPhone","model":"iPhone 12<iPhone13,2>","screenWidth":390,"screenHeight":844,"windowWidth":390,"windowHeight":761,"openid":"7E97DE3XXXXXXXXXXXX6C64DE9","guid":xxxxxxxxxx,"session":"d06xxxxxxxxxxxsc8w","scene":1132,"source":"wza0xxxxxxx002","hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookDetail_chapter_slide_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"34207118","cid":"1"},"dis":1607349651957,"ext6":93,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"34207118","bookStatus":0,"bookPay":1,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"bookLib2_bookList_bookClick_C_0_34207118"}]}
-          BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=3001&refer=-1&bid=30544815&readTime=2685&read_type=0&conttype=1&read_status=0&chapter_info=[{"65":{"readTime":2685,"pay_status":0}}]&sp=-1
+          HOSTING_MODE: true
+        - HEADERS: {"ywsession":"csc5gmt55ivla2zgqv6a185kw7q22bx4","Cookie":"ywguid=1522370084;ywkey=ywQwDuhQjAXC;platform=ios;channel=mqqmina;mpVersion=0.32.5;qq_ver=8.4.17;os_ver=iOS 14.1;mpos_ver=1.21.0;platform=ios;openid=32FEC49F343D8296B84FD8EC6862718C","Connection":"keep-alive","Content-Type":"application/json","Accept":"*/*","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.17.638 CFNetwork/1197 Darwin/20.0.0","Referer":"https://appservice.qq.com/1110657249/0.32.5/page-frame.html","Accept-Language":"zh-cn","Accept-Encoding":"gzip, deflate, br","mpversion":"0.32.5"}
+          BODY: {"common":{"appid":1450024394,"areaid":5,"qq_ver":"8.4.17","os_ver":"iOS 14.1","mp_ver":"0.32.5","mpos_ver":"1.21.0","brand":"iPhone","model":"iPhone 6Plus<iPhone8,2>","screenWidth":414,"screenHeight":736,"windowWidth":414,"windowHeight":687,"openid":"32FEC49F343D8296B84FD8EC6862718C","guid":1522370084,"session":"csc5gmt55ivla2zgqv6a185kw7q22bx4","scene":1132,"source":-1,"hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookStore_newCI_unit_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"358472","cid":"1"},"dis":1607534011260,"ext6":71,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"358472","bookStatus":1,"bookPay":0,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"1132_358472"}]}
+          BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=1132&refer=pages%2Findex%2Findex&bid=358472&readTime=6413&read_type=0&conttype=1&read_status=0&chapter_info=%5B%7B%221%22%3A%7B%22readTime%22%3A6413%2C%22pay_status%22%3A0%7D%7D%5D&sp=-1
           WITHDRAW: true
-          HOSTING_MODE: true 
+          HOSTING_MODE: true
+        - HEADERS: {"ywsession":"q03vtm1ybjkeqm9i33sp66b93l9puquy","Cookie":"ywguid=8441401;ywkey=ywEA53nwO3jb;platform=ios;channel=mqqmina;mpVersion=0.32.5;qq_ver=8.4.17;os_ver=iOS 14.1;mpos_ver=1.21.0;platform=ios;openid=A3B89B8CB9BA7F16F954077EBB5D0509","Connection":"keep-alive","Content-Type":"application/json","Accept":"*/*","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.17.638 CFNetwork/1197 Darwin/20.0.0","Referer":"https://appservice.qq.com/1110657249/0.32.5/page-frame.html","Accept-Language":"zh-cn","Accept-Encoding":"gzip, deflate, br","mpversion":"0.32.5"}
+          BODY: {"common":{"appid":1450024394,"areaid":5,"qq_ver":"8.4.17","os_ver":"iOS 14.1","mp_ver":"0.32.5","mpos_ver":"1.21.0","brand":"iPhone","model":"iPhone 6Plus<iPhone8,2>","screenWidth":414,"screenHeight":736,"windowWidth":414,"windowHeight":687,"openid":"A3B89B8CB9BA7F16F954077EBB5D0509","guid":8441401,"session":"q03vtm1ybjkeqm9i33sp66b93l9puquy","scene":1132,"source":-1,"hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookStore_newCI_unit_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"358472","cid":"1"},"dis":1607534188329,"ext6":41,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"358472","bookStatus":1,"bookPay":0,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"1132_358472"}]}
+          BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=1132&refer=pages%2Findex%2Findex&bid=358472&readTime=8740&read_type=0&conttype=1&read_status=0&chapter_info=%5B%7B%221%22%3A%7B%22readTime%22%3A8740%2C%22pay_status%22%3A0%7D%7D%5D&sp=-1
+          WITHDRAW: true
+          HOSTING_MODE: true
+        - HEADERS: {"ywsession":"y25ctj2yyx4s3izizudnkic10wrqb2p7","Cookie":"ywguid=2670304479;ywkey=ywFYc2xX9fmO;platform=ios;channel=mqqmina;mpVersion=0.32.5;qq_ver=8.4.17;os_ver=iOS 14.1;mpos_ver=1.21.0;platform=ios;openid=F1343548D3B16B809B0BF7B642DB0A86","Connection":"keep-alive","Content-Type":"application/json","Accept":"*/*","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.17.638 CFNetwork/1197 Darwin/20.0.0","Referer":"https://appservice.qq.com/1110657249/0.32.5/page-frame.html","Accept-Language":"zh-cn","Accept-Encoding":"gzip, deflate, br","mpversion":"0.32.5"}
+          BODY: {"common":{"appid":1450024394,"areaid":5,"qq_ver":"8.4.17","os_ver":"iOS 14.1","mp_ver":"0.32.5","mpos_ver":"1.21.0","brand":"iPhone","model":"iPhone 6Plus<iPhone8,2>","screenWidth":414,"screenHeight":736,"windowWidth":414,"windowHeight":687,"openid":"F1343548D3B16B809B0BF7B642DB0A86","guid":2670304479,"session":"y25ctj2yyx4s3izizudnkic10wrqb2p7","scene":1132,"source":-1,"hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookStore_newCI_unit_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"321028","cid":"1"},"dis":1607534360249,"ext6":86,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"321028","bookStatus":1,"bookPay":0,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"1132_321028"}]}
+          BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=1132&refer=-1&bid=321028&readTime=10377&read_type=0&conttype=1&read_status=0&chapter_info=%5B%7B%221%22%3A%7B%22readTime%22%3A10377%2C%22pay_status%22%3A0%2C%22is_tail%22%3A0%7D%7D%5D&sp=-1
+          WITHDRAW: true
+          HOSTING_MODE: true
+        - HEADERS: {"ywsession":"z262b9422wgbi00w22qj8kqlgwqdr2h9","Cookie":"ywguid=2425290827;ywkey=yw2Dtb22ABLb;platform=ios;channel=mqqmina;mpVersion=0.32.5;qq_ver=8.4.17;os_ver=iOS 14.1;mpos_ver=1.21.0;platform=ios;openid=3BA82B6BEBDE2F6E3002780E70D8ACB2","Connection":"keep-alive","Content-Type":"application/json","Accept":"*/*","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.17.638 CFNetwork/1197 Darwin/20.0.0","Referer":"https://appservice.qq.com/1110657249/0.32.5/page-frame.html","Accept-Language":"zh-cn","Accept-Encoding":"gzip, deflate, br","mpversion":"0.32.5"}
+          BODY: {"common":{"appid":1450024394,"areaid":5,"qq_ver":"8.4.17","os_ver":"iOS 14.1","mp_ver":"0.32.5","mpos_ver":"1.21.0","brand":"iPhone","model":"iPhone 6Plus<iPhone8,2>","screenWidth":414,"screenHeight":736,"windowWidth":414,"windowHeight":687,"openid":"3BA82B6BEBDE2F6E3002780E70D8ACB2","guid":2425290827,"session":"z262b9422wgbi00w22qj8kqlgwqdr2h9","scene":1132,"source":-1,"hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookStore_newCI_unit_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"14989936","cid":"1"},"dis":1607534457637,"ext6":44,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"14989936","bookStatus":1,"bookPay":0,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"1132_14989936"}]}
+          BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=1132&refer=-1&bid=14989936&readTime=7191&read_type=0&conttype=1&read_status=0&chapter_info=%5B%7B%221%22%3A%7B%22readTime%22%3A7191%2C%22pay_status%22%3A0%7D%7D%5D&sp=-1
+          WITHDRAW: true
+          HOSTING_MODE: true
