@@ -25,7 +25,7 @@ notify:
 
 # 脚本配置信息
 jobs:
-  qq_read:
+  qq_read: true
     # 使用前请阅读 https://raw.githubusercontent.com/TNanko/Scripts/master/scripts/qq_read.py 前30行使用说明
     enable: false # true 启用脚本； false 不启用脚本（默认不启用脚本）
     version: 1.1.0
