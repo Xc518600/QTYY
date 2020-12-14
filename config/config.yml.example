@@ -12,8 +12,8 @@ notify:
       BARK_MACHINE_CODE:
     telegram_bot:
       # 暂时自行百度google
-      TG_BOT_TOKEN:1225192402:AAEleeSMa875UmhdrYO0OQUciV4zaqzRxRY
-      TG_USER_ID:965408964 
+      TG_BOT_TOKEN: 1225192402:AAEleeSMa875UmhdrYO0OQUciV4zaqzRxRY
+      TG_USER_ID: 965408964 
     dingding_bot:
       # 钉钉机器人，参考教程：https://ding-doc.dingtalk.com/doc#/serverapi2/qf2nxq 在"安全设置"中选择"加签"（必须勾选），其他不懂不要勾选
       DD_BOT_ACCESS_TOKEN:
