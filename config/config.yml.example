@@ -1,5 +1,5 @@
 name: TNanko's Scripts Config File
-version: 1.2.4
+version: 1.2.3
 skip_check_config_version: false # 默认不跳过配置文件的版本检测
 
 # 消息推送
@@ -26,9 +26,9 @@ notify:
 # 脚本配置信息
 jobs:
   qq_read:
-    # 使用前请阅读 https://github.com/TNanko/Scripts/blob/master/docs/qq_read.md
-    enable: true # true 启用脚本； false 不启用脚本（默认不启用脚本）
-    version: 1.3.2
+    # 使用前请阅读 https://raw.githubusercontent.com/TNanko/Scripts/master/scripts/qq_read.py 前30行使用说明
+    enable: false # true 启用脚本； false 不启用脚本（默认不启用脚本）
+    version: 1.1.0
     skip_check_script_version: false # 默认不跳过版本检测
     notify: false # true 启用消息推送； false 不启用消息推送（默认不发消息推送）
     notify_mode:  # 如果全都配置了，可以根据自身需求进行消息推送方式的选择，不需要的可以注释掉或者删除。由于 bark 消息长度的限制，不推荐 bark
@@ -40,22 +40,20 @@ jobs:
       UPLOAD_TIME: 5 # 每次上传阅读时长（单位分钟）
       MAX_READ_TIME: 600 # 每日最大阅读时长（单位分钟）
       ACCOUNTS:
-        - HEADERS:{"ywsession":"6wz2f27lhkkitg6474qanlwcposb0kuh","Cookie":"ywguid=7734834;ywkey=ywdJQw7IaYjw;platform=ios;channel=mqqmina;mpVersion=0.32.5;qq_ver=8.4.17;os_ver=iOS14.1;mpos_ver=1.21.0;platform=ios;openid=CD4F6B1DBAB7E87857EDF7E2A9678561","Connection":"keep-alive","Content-Type":"application/json","Accept":"*/*","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.17.638 CFNetwork/1197 Darwin/20.0.0","Referer":"https://appservice.qq.com/1110657249/0.32.5/page-frame.html","Accept-Language":"zh-cn","Accept-Encoding":"gzip, deflate, br","mpversion":"0.32.5"}
-          BODY:{"common":{"appid":1450024394,"areaid":5,"qq_ver":"8.4.17","os_ver":"iOS14.1","mp_ver":"0.32.5","mpos_ver":"1.21.0","brand":"iPhone","model":"iPhone 6Plus<iPhone8,2>","screenWidth":414,"screenHeight":736,"windowWidth":414,"windowHeight":687,"openid":"CD4F6B1DBAB7E87857EDF7E2A9678561","guid":7734834,"session":"6wz2f27lhkkitg6474qanlwcposb0kuh","scene":1132,"source":-1,"hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookStore_newCI_unit_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"236652","cid":"1"},"dis":1607533714045,"ext6":77,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"236652","bookStatus":1,"bookPay":0,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"1132_236652"}]}
-          BOOK_URL:https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=1132&refer=pages%2Findex%2Findex&bid=236652&readTime=7912&read_type=0&conttype=1&read_status=0&chapter_info=%5B%7B%221%22%3A%7B%22readTime%22%3A7912%2C%22pay_status%22%3A0%2C%22is_tail%22%3A0%7D%7D%5D&sp=-1
-          WITHDRAW: false # 默认不启用提现功能，启用前必须保证账号已经实名认证（模式：满额提现，每天23点以后开始尝试提现，每次提现10元，不满10元不提现，不使用2元和1元提现次数）
-          HOSTING_MODE: false # 默认不启用托管提现，若启用则必须在 WITHDRAW 为 true 下才有效（模式：托管提现，建议放弃薅此羊毛时候打开，将使用剩余的2元和1元提现次数将剩余金币最大程度转化为rmb）
-  bilibili:
-    # 使用前请阅读 https://raw.githubusercontent.com/TNanko/Scripts/master/scripts/bilibil.py 前12行使用说明
-    enable: false # true 启用脚本； false 不启用脚本（默认不启用脚本）
-    version: 1.0.5
-    skip_check_script_version: false # 默认不跳过版本检测
-    notify: false # true 启用消息推送； false 不启用消息推送（默认不发消息推送）
-    notify_mode:  # 如果全都配置了，可以根据自身需求进行消息推送方式的选择，不需要的可以注释掉或者删除。推荐 bark
-      - bark
-      - telegram_bot
-      - dingding_bot
-      - server_chan
-    parameters:
-      ACCOUNTS:
-        - COOKIE:
+          # 多账号，将下面三个参数复制一遍，例子已经写好自行替换，注意冒号后面的空格，空格，空格！（建议在文本编辑器上输入）。
+          # 进书库选择一本书，阅读几秒钟，将抓到的 headers ， body 和 书籍 url ，分别填到下方的 HEADERS ， BODY 和 BOOK_URL （注意冒号后面的空格，不要带引号！）
+        - HEADERS: {"ywsession":"08nexxxxxxxxxx6kn6hx","Cookie":"ywguid=2xxxxxxxx8;ywkey=ywbxxxxxurwjS;platform=ios;channel=mqqmina;mpVersion=0.30.0;qq_ver=8.4.17;os_ver=iOS 14.2;mpos_ver=1.21.0;platform=ios;openid=B9A021EXXXXXXXXXXX18348A2F779","Connection":"keep-alive","Content-Type":"application/json","Accept":"*/*","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.17.638 CFNetwork/1206 Darwin/20.1.0","Referer":"https://appservice.qq.com/1110657249/0.30.0/page-frame.html","Accept-Language":"zh-cn","Accept-Encoding":"gzip, deflate, br","mpversion":"0.30.0"}
+          BODY: {"common":{"appid":1xxxxxx94,"areaid":5,"qq_ver":"8.4.17","os_ver":"iOS 14.1","mp_ver":"0.31.0","mpos_ver":"1.21.0","brand":"iPhone","model":"iPhone 12<iPhone13,2>","screenWidth":390,"screenHeight":844,"windowWidth":390,"windowHeight":761,"openid":"7E97DE3XXXXXXXXXXXX6C64DE9","guid":xxxxxxxxxx,"session":"d06xxxxxxxxxxxsc8w","scene":1132,"source":"wza0xxxxxxx002","hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookDetail_chapter_slide_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"34207118","cid":"1"},"dis":1607349651957,"ext6":93,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"34207118","bookStatus":0,"bookPay":1,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"bookLib2_bookList_bookClick_C_0_34207118"}]}
+          BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=3001&refer=-1&bid=30544815&readTime=2685&read_type=0&conttype=1&read_status=0&chapter_info=[{"65":{"readTime":2685,"pay_status":0}}]&sp=-1
+          WITHDRAW: false  
+          HOSTING_MODE: false 
+        - HEADERS: {"ywsession":"08nexxxxxxxxxx6kn6hx","Cookie":"ywguid=2xxxxxxxx8;ywkey=ywbxxxxxurwjS;platform=ios;channel=mqqmina;mpVersion=0.30.0;qq_ver=8.4.17;os_ver=iOS 14.2;mpos_ver=1.21.0;platform=ios;openid=B9A021EXXXXXXXXXXX18348A2F779","Connection":"keep-alive","Content-Type":"application/json","Accept":"*/*","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.17.638 CFNetwork/1206 Darwin/20.1.0","Referer":"https://appservice.qq.com/1110657249/0.30.0/page-frame.html","Accept-Language":"zh-cn","Accept-Encoding":"gzip, deflate, br","mpversion":"0.30.0"}
+          BODY: {"common":{"appid":1xxxxxx94,"areaid":5,"qq_ver":"8.4.17","os_ver":"iOS 14.1","mp_ver":"0.31.0","mpos_ver":"1.21.0","brand":"iPhone","model":"iPhone 12<iPhone13,2>","screenWidth":390,"screenHeight":844,"windowWidth":390,"windowHeight":761,"openid":"7E97DE3XXXXXXXXXXXX6C64DE9","guid":xxxxxxxxxx,"session":"d06xxxxxxxxxxxsc8w","scene":1132,"source":"wza0xxxxxxx002","hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookDetail_chapter_slide_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"34207118","cid":"1"},"dis":1607349651957,"ext6":93,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"34207118","bookStatus":0,"bookPay":1,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"bookLib2_bookList_bookClick_C_0_34207118"}]}
+          BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=3001&refer=-1&bid=30544815&readTime=2685&read_type=0&conttype=1&read_status=0&chapter_info=[{"65":{"readTime":2685,"pay_status":0}}]&sp=-1
+          WITHDRAW: true
+          HOSTING_MODE: false 
+        - HEADERS: {"ywsession":"08nexxxxxxxxxx6kn6hx","Cookie":"ywguid=2xxxxxxxx8;ywkey=ywbxxxxxurwjS;platform=ios;channel=mqqmina;mpVersion=0.30.0;qq_ver=8.4.17;os_ver=iOS 14.2;mpos_ver=1.21.0;platform=ios;openid=B9A021EXXXXXXXXXXX18348A2F779","Connection":"keep-alive","Content-Type":"application/json","Accept":"*/*","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.17.638 CFNetwork/1206 Darwin/20.1.0","Referer":"https://appservice.qq.com/1110657249/0.30.0/page-frame.html","Accept-Language":"zh-cn","Accept-Encoding":"gzip, deflate, br","mpversion":"0.30.0"}
+          BODY: {"common":{"appid":1xxxxxx94,"areaid":5,"qq_ver":"8.4.17","os_ver":"iOS 14.1","mp_ver":"0.31.0","mpos_ver":"1.21.0","brand":"iPhone","model":"iPhone 12<iPhone13,2>","screenWidth":390,"screenHeight":844,"windowWidth":390,"windowHeight":761,"openid":"7E97DE3XXXXXXXXXXXX6C64DE9","guid":xxxxxxxxxx,"session":"d06xxxxxxxxxxxsc8w","scene":1132,"source":"wza0xxxxxxx002","hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookDetail_chapter_slide_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"34207118","cid":"1"},"dis":1607349651957,"ext6":93,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"34207118","bookStatus":0,"bookPay":1,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"bookLib2_bookList_bookClick_C_0_34207118"}]}
+          BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=3001&refer=-1&bid=30544815&readTime=2685&read_type=0&conttype=1&read_status=0&chapter_info=[{"65":{"readTime":2685,"pay_status":0}}]&sp=-1
+          WITHDRAW: true
+          HOSTING_MODE: true 
