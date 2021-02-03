@@ -1,0 +1,22 @@
+{
+  "id" : "Xc.app.sub",
+  "author" : "@Xc",
+  "icon" : "https:\/\/avatars2.githubusercontent.com\/u\/47924389?s=460&u=5152f048a9e8aaa45102763a578172407c40fcc8&v=4",
+  "name" : "Sunert 签到应用订阅",
+  "repo" : "https:\/\/github.com\/Sunert\/Scripts\/tree\/master",
+  "apps" : [
+    {
+      "author" : "@Xc",
+      "keys" : [
+        "bbb_ck",
+      ],
+      "repo" : "https://github.com/adwktt/adwktt/blob/master/BBB.js",
+      "id" : "BBB",
+      "script" : "https://raw.githubusercontent.com/adwktt/adwktt/master/BBB.js",
+      "name" : "步步宝",
+      "icons" : [
+        "https:\/\/raw.githubusercontent.com\/Orz-3\/mini\/master\/weibo.png",
+        "https:\/\/raw.githubusercontent.com\/Orz-3\/task\/master\/weibo.png"
+      ]
+    },
+    {
