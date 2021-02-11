@@ -40,7 +40,7 @@ jobs:
           duokandianbodyVal: ${{ secrets.duokandianbodyVal }}
           duokandianvideobodyVal: ${{ secrets.duokandianvideobodyVal }}
           DKD_duokandianCASH: ${{ secrets.DKD_duokandianCASH }}
-          DKDTXURL: ${{ secrets.dkdtxurl }}
+          DKD_duokandianBODY: ${{ secrets.DKD_duokandianBODY }}
           DKDTXHD: ${{ secrets.dkdtxhd }}
           DKDTXBODY: ${{ secrets.dkdtxbody }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
