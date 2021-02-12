@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/CenBoMin/GithubSync.git ~/scripts
+          git clone https://github.com/CenBoMin/GithubSync.git
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -37,7 +37,6 @@ jobs:
           npm install 
           node TXSTOCK/txstockqx.js
         env:
-          https://github.com/CenBoMin/GithubSync.git
           USERHEADER: ${{ secrets.USERHEADER }}
           USERKEY: ${{ secrets.USERKEY }}
           CASHHEADER: ${{ secrets.CASHHEADER }}
