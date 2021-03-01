@@ -33,7 +33,7 @@ jobs:
       - name: '运行 【笑谱】'
         if: env.XP_refreshTOKEN
         run: |
-          cd ~/JavaScript
+          cd ~/QTYYt
           node iboxpay.js
         env:
           
