@@ -25,7 +25,7 @@ jobs:
 
     env:
 
-        YDZ_yuedongzuTOKEN: ${{ secrets.YDZ_yuedongzuTOKEN！ }}
+        YDZ_yuedongzuTOKEN: ${{ secrets.YDZ_yuedongzuTOKEN }}
 
         YDZ_CASH: ${{ secrets.YDZ_CASH }}
 
