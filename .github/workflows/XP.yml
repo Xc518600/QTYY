@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/ziye66666/JavaScript.git ~/JavaScript
+          git clone https://github.com/Xc518600/QTYY.git ~/JavaScript
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -34,7 +34,7 @@ jobs:
         if: env.XP_refreshTOKEN
         run: |
           cd ~/JavaScript
-          node Task/iboxpay.js
+          node iboxpay.js
         env:
           
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
