@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/CenBoMin/GithubSync.git
+          git clone https://github.com/CenBoMin/GithubSync.git ~/GithubSync
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -33,7 +33,7 @@ jobs:
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
       - name: '运行 【腾讯股票】'
         run: | 
-          cd ~/scripts
+          cd ~/GithubSync
           npm install 
           node TXSTOCK/txstockqx.js
         env:
