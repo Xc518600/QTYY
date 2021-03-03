@@ -24,12 +24,12 @@ jobs:
               run: |
                   node txstockqx.js
               env:
-                  userheaderVal: ${{ secrets.userheaderVal }}
-                  userkeyVal: ${{ secrets.userkeyVal }}
-                  signheaderVal: ${{ secrets.signheaderVal }}
-                  signkeyVal: ${{ secrets.signkeyVal }}
-                  taskheaderVal: ${{ secrets.taskheaderVal }}
-                  taskkeyVal: ${{ secrets.taskkeyVal }}
-                  wxtaskkeyVal: ${{ secrets.wxtaskkeyVal }}
+                  userheader: ${{ secrets.userheader }}
+                  userkey: ${{ secrets.userkey }}
+                  signheader: ${{ secrets.signheader }}
+                  signkey: ${{ secrets.signkey }}
+                  taskheader: ${{ secrets.taskheader }}
+                  taskkey: ${{ secrets.taskkey }}
+                  wxtaskkey: ${{ secrets.wxtaskkey }}
                   cashheaderVal: ${{ secrets.cashheaderVal }}
                   
