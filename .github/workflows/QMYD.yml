@@ -1,4 +1,4 @@
-name: 全民悦动
+name: 全民
 on:
 workflow_dispatch:
 schedule:
