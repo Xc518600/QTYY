@@ -1,8 +1,8 @@
-name: QM
+name: qmyd
 on:
 workflow_dispatch:
 schedule:
-     - cron: '0,30 0-23 * * *'
+     - cron: '0 16 * * *'
 watch:
 types: started
 jobs:
