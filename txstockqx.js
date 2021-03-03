@@ -63,35 +63,35 @@ if ($.isNode()) {
 }
 
 const userheaderArr = [];
-let userheaderVal = "";
+let userheaderVal = process.env.userheader
 let USERHEADER = [];
 
 const userkeyArr = [];
-let userkeyVal = "";
+let userkeyVal = process.env.userkey
 let USERKEY = [];
 
 const cashheaderArr = [];
-let cashheaderVal = "";
+let cashheaderVal = process.env.cashheader
 let CASHHEADER = [];
 
 const signheaderArr = [];
-let signheaderVal = "";
+let signheaderVal = process.env.signkey
 let SINGHEADER = [];
 
 const signkeyArr = [];
-let signkeyVal = "";
+let signkeyVal = process.env.userheader
 let SINGKEY = [];
 
 const taskheaderArr = [];
-let taskheaderVal = "";
+let taskheaderVal = process.env.taskheader
 let TASKHEADER = [];
 
 const taskkeyArr = [];
-let taskkeyVal = "";
+let taskkeyVal = process.env.taskkey
 let TASKKEY = [];
 
 const wxtaskkeyArr = [];
-let wxtaskkeyVal = "";
+let wxtaskkeyVal = process.env.wxtaskkey
 let WXTASKKEY = [];
 
 ////////////////////////////////////////////////////////////////////
