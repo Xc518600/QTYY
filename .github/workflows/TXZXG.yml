@@ -24,7 +24,7 @@ jobs:
               run: |
                   node txstockqx.js
               env:
-                  userheader: ${{ secrets.userheaderVal }}
+                  userheaderVal: ${{ secrets.userheader }}
                   userkey: ${{ secrets.userkeyVal }}
                   signheader: ${{ secrets.signheaderVal }}
                   signkey: ${{ secrets.signkeyVal }}
