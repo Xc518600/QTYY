@@ -31,5 +31,5 @@ jobs:
                   taskheaderVal: ${{ secrets.taskheaderVal }}
                   taskkeyVal: ${{ secrets.taskkeyVal }}
                   wxtaskkeyVal: ${{ secrets.wxtaskkeyVal }}
-                  cash: ${{ secrets.cash }}
+                  cashheaderVal: ${{ secrets.cashheaderVal }}
                   
