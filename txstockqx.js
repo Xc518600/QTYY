@@ -108,11 +108,6 @@ if ($.isNode()) {
       userkeyArr.push(userkeyVal[item])
     }
   });
-  Object.keys(cashheaderVal).forEach((item) => {
-    if (cashheaderVal[item]) {
-      cashheaderArr.push(cashheaderVal[item])
-    }
-  });
   Object.keys(signheaderVal).forEach((item) => {
     if (signheaderVal[item]) {
       signheaderArr.push(signheaderVal[item])
@@ -143,7 +138,6 @@ if ($.isNode()) {
 } else {
   userheaderArr.push($.getdata('userheader'));
   userkeyArr.push($.getdata('userkey'));
-  cashheaderArr.push($.getdata('cashheader'));
   signheaderArr.push($.getdata('signheader'));
   signkeyArr.push($.getdata('signkey'));
   taskheaderArr.push($.getdata('taskheader'));
