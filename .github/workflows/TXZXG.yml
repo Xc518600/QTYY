@@ -24,10 +24,10 @@ jobs:
               run: |
                   node txstockqx.js
               env:
-                  USERHEADER: ${{ secrets.USERHEADERVAL }}
-                  USERKEY: ${{ secrets.USERKEYVAL }}
-                  SINGHEADER: ${{ secrets.SINGHEADERVAL }}
-                  SINGKEY: ${{ secrets.SINGKEYVAL }}
-                  TASKHEADER: ${{ secrets.TASKHEADERVAL }}
-                  TASKKEY: ${{ secrets.TASKKEYVAL }}
-                  WXTASKKEY: ${{ secrets.WXTASKKEYVAL }}
+                  USERHEADERVal: ${{ secrets.USERHEADER }}
+                  USERKEYVal: ${{ secrets.USERKEY }}
+                  SINGHEADERVal: ${{ secrets.SINGHEADER }}
+                  SINGKEYVal: ${{ secrets.SINGKEY }}
+                  TASKHEADERVal: ${{ secrets.TASKHEADER }}
+                  TASKKEYVal: ${{ secrets.TASKKEY }}
+                  WXTASKKEYVal: ${{ secrets.WXTASKKEY }}
