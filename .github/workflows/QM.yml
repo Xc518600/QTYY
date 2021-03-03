@@ -11,7 +11,7 @@ runs-on: ubuntu-latest
 if: github.event.repository.owner.id == github.event.sender.id
 env:
 QMYD_qmydTOKEN: ${{ secrets.QMYD_qmydTOKEN }}
-YDZ_CASH: ${{ secrets.YDZ_CASH }}
+QMYD_CASH: ${{ secrets.QMYD_CASH }}
 steps:
       - name: Checkout
 run: |
