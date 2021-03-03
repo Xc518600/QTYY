@@ -3,7 +3,7 @@ name: 腾讯自选股
 on:
     workflow_dispatch:
     schedule:
-        - cron: "0 */24 * * *"
+        - cron: "30 0 * * *"
     watch:
         types: [started]
 
@@ -24,12 +24,10 @@ jobs:
               run: |
                   node txstockqx.js
               env:
-                  userheader: ${{ secrets.userheader }}
-                  userkey: ${{ secrets.userkey }}
-                  signheader: ${{ secrets.signheader }}
-                  signkey: ${{ secrets.signkey }}
-                  taskheader: ${{ secrets.taskheader }}
-                  taskkey: ${{ secrets.taskkey }}
-                  wxtaskkey: ${{ secrets.wxtaskkey }}
-                  cashheaderVal: ${{ secrets.cashheaderVal }}
-                  
+                  USERHEADER: ${{ secrets.USERHEADER }}
+                  USERKEY: ${{ secrets.USERKEY }}
+                  SINGHEADER: ${{ secrets.SINGHEADER }}
+                  SINGKEY: ${{ secrets.SINGKEY }}
+                  TASKHEADER: ${{ secrets.TASKHEADER }}
+                  TASKKEY: ${{ secrets.TASKKEY }}
+                  WXTASKKEY: ${{ secrets.WXTASKKEY }}
