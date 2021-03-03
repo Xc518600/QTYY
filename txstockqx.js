@@ -100,7 +100,7 @@ let WXTASKKEY = [];
 if ($.isNode()) {
   Object.keys(userheaderVal).forEach((item) => {
     if (userheaderVal[item]) {
-      userheaderArr.push(cashheaderVal[item])
+      userheaderArr.push(signheaderVal[item])
     }
   });
   Object.keys(userkeyVal).forEach((item) => {
