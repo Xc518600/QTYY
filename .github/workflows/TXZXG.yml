@@ -25,9 +25,9 @@ jobs:
                   node txstockqx.js
               env:
                   userheaderVal: ${{ secrets.userheader }}
-                  userkey: ${{ secrets.userkeyVal }}
-                  signheader: ${{ secrets.signheaderVal }}
-                  signkey: ${{ secrets.signkeyVal }}
-                  taskheader: ${{ secrets.taskheaderVal }}
-                  taskkey: ${{ secrets.taskkeyVal }}
-                  wxtaskkey: ${{ secrets.wxtaskkeyVal }}
+                  userkeyVal: ${{ secrets.userkey }}
+                  signheaderVal: ${{ secrets.signheader }}
+                  signkeyVal: ${{ secrets.signkey }}
+                  taskheaderVal: ${{ secrets.taskheader }}
+                  taskkeyVal: ${{ secrets.taskkey }}
+                  wxtaskkeyVal: ${{ secrets.wxtaskkey }}
