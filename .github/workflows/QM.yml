@@ -1,4 +1,4 @@
-name: 全民
+name: QM
 on:
 workflow_dispatch:
 schedule:
