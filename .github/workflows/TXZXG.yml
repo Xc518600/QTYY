@@ -22,7 +22,7 @@ jobs:
                   npm install
             - name: "运行【腾讯自选股】"
               run: |
-                  node txzxg.js
+                  node txstockqx.js
               env:
                   userheader: ${{ secrets.userheaderVal }}
                   userkey: ${{ secrets.userkeyVal }}
