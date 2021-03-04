@@ -3,46 +3,50 @@ name: 燃旅视频
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */1 * * *'
-  watch:
-    types: started
-  repository_dispatch:
-    types: ranlv
+    - cron: '0,30 0-12 * * *'
+  # watch:
+  #       types: started
+  # repository_dispatch:
+  #   types: jd_cash
 jobs:
   build:
-
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
+    env:
+      URL: "https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/ranlv.js"
+      RUNFILE: "ranlv.js"
+      RLURL: ${{ secrets.RLURL }}
+      RLHEADER: ${{ secrets.RLHEADER }}
+      RLBODY: ${{ secrets.RLBODY }}
+      PUSH_KEY: ${{ secrets.PUSH_KEY }}
+      BARK_PUSH: ${{ secrets.BARK_PUSH }}
+      BARK_SOUND: ${{ secrets.BARK_SOUND }}
+      TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+      TG_USER_ID: ${{ secrets.TG_USER_ID }}
+      DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
+      DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
+      IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          repository: r0ckrise/Self_Actions
+        #with:
+        #  repository: Sunert/Scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - name: Cache node_modules
-        uses: actions/cache@v2 # 使用 GitHub 官方缓存 Action。
+        uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
         env:
           cache-name: cache-node-modules
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
       - name: npm install
+        if: env.RLHEADER
         run: |
           npm install
       - name: '运行 【燃旅视频】'
+        if: env.RLHEADER
         run: |
-          node ranlv.js
-        env:
-          RLURL: ${{ secrets.RLURL }}
-          RLHEADER: ${{ secrets.RLHEADER }}
-          PUSH_KEY: ${{ secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_USER_ID: ${{ secrets.TG_USER_ID }}
-          BARK_SOUND: ${{ secrets.BARK_SOUND }}
-          DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
-          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
-          IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
+          node Task/ranlv.js
