@@ -34,7 +34,7 @@ jobs:
           npm install
       - name: '运行 【燃旅视频】'
         run: |
-          node Task/ranlv.js
+          node ranlv.js
         env:
           RLURL: ${{ secrets.RLURL }}
           RLHEADER: ${{ secrets.RLHEADER }}
