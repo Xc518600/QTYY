@@ -34,7 +34,7 @@ jobs:
       - name: Checkout
 
         run: |
-          git clone https://github.com/ziye11/JavaScript.git ~/JavaScript
+          git clone https://github.com/Xc518600/QTYY.git ~/QTYY
       - name: Use Node.js 12.x
 
         uses: actions/setup-node@v1
@@ -48,7 +48,7 @@ jobs:
         if: env.BBB_bububaoTOKEN
 
         run: |
-          cd ~/JavaScript
+          cd ~/QTYY
           npm install
       - name: '运行 【步步宝】'
         
