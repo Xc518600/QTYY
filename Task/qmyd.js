@@ -1817,10 +1817,10 @@ function tixian_html(timeout = 0) {
                             console.log(`提现查询：今日已提现\n`);
                             $.message += `【提现查询】：今日已提现\n`;
                         }
-                        if (jine3&&jine3=4&&jine5) {
+                        if (jine5) {
                         console.log(`提现券：剩余${$.tixian_html.tixian_coupon}张券\n${jine5.jine}元：需要${jine5.cond}张券\n`);
                         $.message += `【提现券】：剩余${$.tixian_html.tixian_coupon}张券\n【${jine5.jine}元】：需要${jine5.cond}张券\n`;
-    }
+                           }
                         if (jine6.fenshu_tixian_tip) {
 
                             fenshu6 = jine6.fenshu_tixian_tip.split('今日剩余')[1].split('份')[0]
