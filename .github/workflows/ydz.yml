@@ -35,7 +35,7 @@ jobs:
 
         run: |
 
-          git clone https://github.com/ziye11/JavaScript.git ~/JavaScript
+          git clone https://github.com/Xc518600/QTYY.git ~/QTYY
 
       - name: Use Node.js 12.x
 
@@ -51,7 +51,7 @@ jobs:
 
         run: |
 
-          cd ~/JavaScript
+          cd ~/QTYY
 
           npm install
 
@@ -61,7 +61,7 @@ jobs:
        
         run: |
 
-          cd ~/JavaScript
+          cd ~/QTYY
 
           node Task/yuedongzu.js
 
