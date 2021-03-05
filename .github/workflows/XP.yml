@@ -16,7 +16,7 @@ jobs:
     env:
         XP_refreshTOKEN: ${{ secrets.XP_refreshTOKEN }}
         XP_CASH: ${{ secrets.XP_CASH }}
-        XP_live: ${{ secrets.XP_live }}
+        XP_live: ${{ secrets.XP_live1 }}
     steps:
       - name: Checkout
         run: |
