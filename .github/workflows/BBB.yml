@@ -55,7 +55,7 @@ jobs:
         if: env.BBB_bububaoTOKEN
        
         run: |
-          cd ~/JavaScript
+          cd ~/QTYY
           node Task/bububao.js
         env:
 
