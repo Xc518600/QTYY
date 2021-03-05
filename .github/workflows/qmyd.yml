@@ -48,7 +48,7 @@ jobs:
       - name: '运行 【全民悦动】'
         #if: env.RLHEADER
         run: |
-          node Task/actions.js
+          node Task/qmyd.js
 
 
 
