@@ -1,0 +1,63 @@
+name: 云扫码，番茄看看
+
+on:
+
+  workflow_dispatch:
+
+  schedule:
+
+     - cron: '26 9-21/2 * * *'
+
+  watch:
+
+    types: started
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    if: github.event.repository.owner.id == github.event.sender.id
+
+    env:
+
+        WXQD: ${{ secrets.WXQD }}
+
+        TZ: Asia/shanghai
+
+    steps:
+
+      - name: Checkout
+
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 12.x
+
+        uses: actions/setup-node@v1
+
+        with:
+
+          node-version: 12.x
+
+      - name: npm install
+
+        run: |
+
+          npm install
+
+      - name: '运行 【云扫码】'
+
+        if: env.WXQD
+
+        run: |
+
+          node ysm.js
+
+      - name: '运行 【番茄看看】'
+
+        if: env.WXQD
+
+        run: |
+
+          node Task/fqkk.js
