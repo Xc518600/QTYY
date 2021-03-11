@@ -4,7 +4,7 @@ name: hl
 on:
 workflow_dispatch:
 schedule:
-    - cron: '20 5,12 * * *'
+    - cron: '0 16 * * *'
 # watch:
 #       types: started
 # repository_dispatch:
