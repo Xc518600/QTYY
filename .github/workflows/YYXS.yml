@@ -18,15 +18,8 @@ jobs:
     env:
       URL: "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/QQread.js"
       RUNFILE: "Task/QQread.js"      
-      YYXSXXURL: ${{ secrets.YYXSXXURL }}
-      YYXSSPURL: ${{ secrets.YYXSSPURL }}
-      YYXSSPHD: ${{ secrets.YYXSSPHD }}
-      YYXSSPBODY: ${{ secrets.YYXSSPBODY }}
-      YYXSJSURL: ${{ secrets.YYXSJSURL }}
-      YYXSSCURL: ${{ secrets.YYXSSCURL }}
-      YYXSSCHD: ${{ secrets.YYXSSCHD }}
-      YYXSCJURL: ${{ secrets.YYXSCJURL }}
-      YYXSCJHD: ${{ secrets.YYXSCJHD }}    
+      HLDSPURL: ${{ secrets.HLDSPURL }}
+      HLDSPHD: ${{ secrets.HLDSPHD }}
       PUSH_KEY: ${{ secrets.PUSH_KEY }}
       BARK_PUSH: ${{ secrets.BARK_PUSH }}
       BARK_SOUND: ${{ secrets.BARK_SOUND }}
