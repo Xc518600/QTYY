@@ -32,7 +32,7 @@ run: |
 run: |
           node Task/sq.js
         env:
-            shuqiuserurlVal: ${{ secrets.shuqiuserurlVal }}
+shuqiuserurlVal: ${{ secrets.shuqiuserurlVal }}
             shuqisyurlVal: ${{ secrets.shuqisyurlVal }}
             shuqisybodyVal: ${{ secrets.shuqisybodyVal }}
             shuqispbodyVal: ${{ secrets.shuqispbodyVal }}
