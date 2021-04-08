@@ -1,0 +1,51 @@
+/*
+自行替换XXX地方的名字（就是你github库的名字）
+*/
+
+name: V生活任务
+
+on:
+  workflow_dispatch:
+  schedule:
+     - cron: '26 3,6 * * *'
+  watch:
+    types: started
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    env:
+        VSH_HD: ${{ secrets.VSH_HD }}
+        VSH_URL: ${{ secrets.VSH_URL }}		
+        VSHDSP_BODY: ${{ secrets.VSHDSP_BODY }}	
+        VSHSP_BODY: ${{ secrets.VSHSP_BODY }}
+        VSH1_BODY: ${{ secrets.VSH1_BODY }}		
+        VSH2_BODY: ${{ secrets.VSH2_BODY }}	
+        VSH_BODY: ${{ secrets.VSH_BODY }}
+        VSHQD_BODY: ${{ secrets.VSHQD_BODY }}		
+        
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/xxx
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: npm install
+        if: env.VSH_HD
+        run: |
+          cd ~/QTYY
+          git checkout JavaScript
+          npm install
+      - name: '运行 【V生活任务】'
+        if: env.VSH_HD
+        run: |
+          cd ~/QTYY
+          node Task/vsh.js
+        env:
+          
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
+          BARK_SOUND: ${{ secrets.BARK_SOUND }}
