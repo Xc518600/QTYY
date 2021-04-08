@@ -1,4 +1,4 @@
-name: 腾讯自选股
+name: 腾讯自选股2
 
 on:
   workflow_dispatch:
