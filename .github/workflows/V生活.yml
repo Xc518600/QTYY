@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/QTYY
+          git clone https://github.com/Xc518600/QTYY.git ~/QTYY
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
