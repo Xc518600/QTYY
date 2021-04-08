@@ -1,4 +1,4 @@
-name: 悦动
+name: V生活
 
 
 
@@ -9,7 +9,7 @@ on:
 
   schedule:
 
-     - cron: '0,30 0-23 * * *'
+     - cron: '26 3,6 * * *'
 
   watch:
 
@@ -25,9 +25,14 @@ jobs:
 
     env:
 
-        YDZ_yuedongzuTOKEN: ${{ secrets.YDZ_yuedongzuTOKEN }}
-
-        YDZ_CASH: ${{ secrets.YDZ_CASH }}
+        VSH_HD: ${{ secrets.VSH_HD }}
+        VSH_URL: ${{ secrets.VSH_URL }}		
+        VSHDSP_BODY: ${{ secrets.VSHDSP_BODY }}	
+        VSHSP_BODY: ${{ secrets.VSHSP_BODY }}
+        VSH1_BODY: ${{ secrets.VSH1_BODY }}		
+        VSH2_BODY: ${{ secrets.VSH2_BODY }}	
+        VSH_BODY: ${{ secrets.VSH_BODY }}
+        VSHQD_BODY: ${{ secrets.VSHQD_BODY }}
 
     steps:
 
@@ -47,7 +52,7 @@ jobs:
 
       - name: npm install
 
-        if: env.YDZ_yuedongzuTOKEN
+        if: env.VSH_HD
 
         run: |
 
@@ -55,15 +60,15 @@ jobs:
 
           npm install
 
-      - name: '运行 【悦动】'
+      - name: '运行 【V生活】'
         
-        if: env.YDZ_yuedongzuTOKEN
+        if: env.VSH_HD
        
         run: |
 
           cd ~/QTYY
 
-          node Task/yuedongzu.js
+          node Task/vsh.js
 
         env:
 
