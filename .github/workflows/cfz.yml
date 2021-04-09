@@ -3,7 +3,7 @@ name: 春风转
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 9-23 * * *'
+    - cron: '10,40 10-21 * * *'
   watch:
     types: started
   repository_dispatch:
