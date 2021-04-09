@@ -4,6 +4,7 @@
 部署方式
 注意：所有脚本任务都是未启用并且默认不发消息推送，请自行根据自身需求设置，配置文件采用 yaml 语法编写（注意空格），建议使用文本编辑器填写配置，以防格式错误！ 最好写完配置文件后在在线检验yaml语法检验一下 yaml 语法是否规范，当然你可以百度 Google 其他的在线检验网站。
 
+
 linux/windows virtual private server
 如果你没有安装 git ，那么运行 apt-get install git -y(Ubuntu/Debian) 或者 yum install git -y(Centos) 根据你的系统选择对应的命令
 git clone https://github.com/TNanko/Scripts.git
