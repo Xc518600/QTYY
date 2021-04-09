@@ -23,6 +23,6 @@ jobs:
         run: |
           npm install
       - name: '运行 【西梅1】'
-        if: env.XIMEI_HD
+        if: env.XIMEI_HD1
         run: |
           node Task/ximei1.js
