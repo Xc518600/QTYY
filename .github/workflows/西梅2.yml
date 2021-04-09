@@ -5,14 +5,14 @@ on:
   schedule:
      - cron: '20 0,5 * * *'
   watch:
-    types: ximei
+    types: ximei1
 jobs:
   build:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        XIMEI_HD: ${{ secrets.XIMEI_HD1 }}
-        XIMEI_URL: ${{ secrets.XIMEI_URL1 }}
+        XIMEI_HD1: ${{ secrets.XIMEI_HD1 }}
+        XIMEI_URL1: ${{ secrets.XIMEI_URL1 }}
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 14.x
