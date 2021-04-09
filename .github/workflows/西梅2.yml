@@ -25,4 +25,4 @@ jobs:
       - name: '运行 【西梅】'
         if: env.XIMEI_HD
         run: |
-          node Task/ximei.js
+          node Task/ximei1.js
