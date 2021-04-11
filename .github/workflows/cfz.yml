@@ -28,5 +28,6 @@ jobs:
                   node Task/cfz.js
               env:
                   CFZHD: ${{ secrets.CFZHD }}
+                  CFZURL: ${{ secrets.CFZURL }}
                   TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
                   TG_USER_ID: ${{ secrets.TG_USER_ID }}
