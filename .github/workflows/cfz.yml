@@ -25,7 +25,7 @@ jobs:
                   npm install
             - name: "运行 【Spring_turn】"
               run: |
-                  node ./cfz.js
+                  node Task/cfz.js
               env:
                   CFZHD: ${{ secrets.CFZHD }}
                   TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
