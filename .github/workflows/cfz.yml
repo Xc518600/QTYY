@@ -27,7 +27,8 @@ jobs:
               run: |
                   node Task/cfz.js
               env:
-                  CFZHD: ${{ secrets.CFZHD }}
+                  YQNB_yqnbHEADER: ${{ secrets.YQNB_yqnbHEADER }}
+                  YQNB_yqnbBODY: ${{ secrets.YQNB_yqnbBODY }}
                   TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
                   TG_USER_ID: ${{ secrets.TG_USER_ID }}
                   
