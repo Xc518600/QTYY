@@ -3,11 +3,11 @@ name: 易趣
 on:
 workflow_dispatch:
 schedule:
-    - cron: '7 7-20 * * *'
+    - cron: '0 7-20 * * *'
 watch:
 types: started
 repository_dispatch:
-types: baidu_speed
+types: YQ
 jobs:
 build:
 runs-on: ubuntu-latest
