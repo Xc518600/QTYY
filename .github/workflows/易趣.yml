@@ -1,5 +1,5 @@
 
-name: 易趣
+name: YQ
 on:
 workflow_dispatch:
 schedule:
