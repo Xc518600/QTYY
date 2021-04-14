@@ -25,7 +25,7 @@ jobs:
                   npm install
             - name: "运行 【Spring_turn】"
               run: |
-                  node Task/cfz.js
+                  node Task/YQ.js
               env:
                   YQNB_yqnbHEADER: ${{ secrets.YQNB_yqnbHEADER }}
                   YQNB_yqnbBODY: ${{ secrets.YQNB_yqnbBODY }}
