@@ -21,7 +21,7 @@ run: |
           npm install
       - name: '运行 【云扫码】'
 run: |
-          node ysm.js
+          node Task/ysm.js
         env:
 PUSH_KEY: ${{ secrets.PUSH_KEY }}
 BARK_PUSH: ${{ secrets.BARK_PUSH }}
