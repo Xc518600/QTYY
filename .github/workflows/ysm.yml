@@ -1,4 +1,4 @@
-name: 云扫码
+name: ys
 on:
 workflow_dispatch:
 schedule:
