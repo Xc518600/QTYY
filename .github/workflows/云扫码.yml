@@ -25,13 +25,13 @@ jobs:
         with:
           node-version: 12.x
       - name: npm install
-        if: env.YSM
+        if: env.YSMHD
         run: |
           cd ~/ziye
           git checkout feizao
           npm install
       - name: '运行 【云扫码】'
-        if: env.YSM
+        if: env.YSMHD
         run: |
           cd ~/ziye
           node ysm.js
