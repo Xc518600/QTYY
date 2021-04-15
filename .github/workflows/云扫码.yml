@@ -1,4 +1,4 @@
-name: 百度极速版
+name: 云扫码
 
 on:
   workflow_dispatch:
@@ -23,9 +23,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【百度极速版】'
+      - name: '运行 【云扫码】'
         run: |
-          node ./Task/baidu_speed.js
+          node ./Task/ysm.js
         env:
           BAIDU_COOKIE: ${{ secrets.BAIDU_COOKIE }}
           BAIDU_CASH: ${{ secrets.BAIDU_CASH }}
