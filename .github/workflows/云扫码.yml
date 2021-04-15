@@ -12,6 +12,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     env:
         YSM: ${{ secrets.YSM }}
+        YSMTX: ${{ secrets.YSMTX }}
         
     steps:
       - name: Checkout
