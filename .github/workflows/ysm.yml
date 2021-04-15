@@ -1,8 +1,8 @@
-name: 云扫码
+name: ys
 on:
 workflow_dispatch:
 schedule:
-     - cron: '0 12 * * *'
+     - cron: '0 12 * * * *'
 watch:
 types: started
 jobs:
