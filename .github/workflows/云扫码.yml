@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        YSM: ${{ secrets.YSM }}
+        YSMURL: ${{ secrets.YSMURL }}
+        YSMHD: ${{ secrets.YSMHD }}
+        YSMBODY: ${{ secrets.YSMBODY }}
         YSMTX: ${{ secrets.YSMTX }}
         
     steps:
