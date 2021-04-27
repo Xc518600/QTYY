@@ -30,7 +30,7 @@ jobs:
           npm install
       - name: '运行 【讯播广告】'
         run: |
-          cd ~/scripts
+          cd ~/QTYY
           node Task/xbgg.js
         env:
           XBGGURL: ${{ secrets.XBGGURL }}
