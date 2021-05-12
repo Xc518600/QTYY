@@ -25,11 +25,12 @@ const notify = $.isNode() ?require('./sendNotify') : '';
 var newsaid;
 let status;
 status = (status = ($.getval("xpreadstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
+var delay = ($.getval("delay") || 30)
 var xpreadCookieArr = []
 var newslist = new Array();
 let xpreadCookie = $.getdata('xpreadCookie')
-var xpreadtaskId = 21;
-var newscid = 2;
+var xpreadtaskId = 15;
+var newscid = 11;
 let tz = ($.getval('tz') || '1');//0关闭通知，1默认开启
 const invite=1;//新用户自动邀请，0关闭，1默认开启
 const logs =0;//0为关闭日志，1为开启
@@ -48,12 +49,11 @@ if (isGetCookie) {
    GetCookie();
    $.done()
 } 
-if (process.env.xpreadCookie && process.env.xpreadCookie.indexOf('\n') > -1) {
-  xpreadCookieArr.push(process.env.xpreadCookie.split('\n'))
-} else {
-  xpreadCookieArr.push(process.env.xpreadCookie.split())
-};
+    xpreadCookieArr.push($.getdata('xpreadCookie'))
     let xpreadcount = ($.getval('xpreadcount') || '1');
+  for (let i = 2; i <= xpreadcount; i++) {
+    xpreadCookieArr.push($.getdata(`xpreadCookie${i}`))
+  }
 !(async () => {
 if (!xpreadCookieArr[0]) {
     $.msg($.Ariszy, '【提示】请先获取笑谱阅读一Cookies')
@@ -63,7 +63,7 @@ if (!xpreadCookieArr[0]) {
   for (let i = 0; i < xpreadCookieArr.length; i++) {
     if (xpreadCookieArr[i]) {
       message = ''
-      xpreadCookie = String(xpreadCookieArr[i]);
+      xpreadCookie = xpreadCookieArr[i];
       $.index = i + 1;
       console.log(`\n开始【笑谱阅读${$.index}】`)
       await newslists()
@@ -114,9 +114,9 @@ async function newslists(){
             //newscid = newslist[i].cid
             let newstitle = newslist[i].title
             $.log("开始阅读:"+newsaid+"\n"+newstitle)
-            await $.wait(15000)
+            await $.wait(200*delay)
             await newsdetail()
-            await $.wait(5000)
+            await $.wait(800*delay)
             await newscomplete()
           }
           }
