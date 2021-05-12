@@ -31,7 +31,7 @@ jobs:
       - name: '运行 【笑谱阅读】'
         run: |
           cd ~/QTYY
-          node xpread.js
+          node Task/xpread.js
         env:
           xpreadCookie: ${{ secrets.xpreadCookie }}
           #微信酱
