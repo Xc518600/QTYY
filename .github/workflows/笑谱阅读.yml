@@ -27,6 +27,7 @@ jobs:
         run: |
           node Task/xpread.js
         env:
+        
           xpreadCookie: ${{ secrets.xpreadCookie }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
