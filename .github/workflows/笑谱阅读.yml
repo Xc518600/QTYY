@@ -19,18 +19,18 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/2440194388/Wool-script.git ~/scripts
+          git clone https://github.com/Xc518600/QTYY.git ~/QTYY
       - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
       - name: npm install
         run: |
-          cd ~/scripts
+          cd ~/QTYY
           npm install
       - name: '运行 【笑谱阅读】'
         run: |
-          cd ~/scripts
+          cd ~/QTYY
           node xpread.js
         env:
           xpreadCookie: ${{ secrets.xpreadCookie }}
