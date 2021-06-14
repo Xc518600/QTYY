@@ -98,8 +98,8 @@ if ($.isNode()) {
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
  } else {
-    rlurlArr.push($.getdata('rlurl'))
-    rlheaderArr.push($.getdata('rlheader'))
+    rlurlArr.push($.getdata('access_token=f2e1d57418bb3d6a0439b494f3468a75&client=1&member_id=194774&user_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJSYW5sdiBKV1QiLCJpYXQiOjE2MTMzNzk0OTgsImV4cCI6MzIyNjc1ODk5NiwiYXVkIjoiUmFubHYiLCJzdWIiOiJSYW5sdiIsImRhdGEiOnsibWVtYmVyX2lkIjoxOTQ3NzQsImF2YXRhciI6Imh0dHA6XC9cL3Jhbmx2Lmx2ZmFjbi5jb21cL3N0YXRpY1wvbW9kdWxlXC9hZG1pblwvaW1nXC9kZWZhdWx0X2hlYWQuanBnIiwibmlja25hbWUiOiJcdTc1MjhcdTYyMzcwNzQ2NTgyOSIsIm1vYmlsZSI6IjE3NjEyODEzODQ0In19.p97TxVYTm73xK7XHn1_7jTCUThAA4F0ROioKxtjZZ60&video_id=26342'))
+    rlheaderArr.push($.getdata('{Cookie":"view_35681=35681; acw_tc=b482708816133785839286508e6f10863f00dc2147229269b4df32f438; view_37193=37193; view_38006=38006","Accept":"*/*","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"ranlv.lvfacn.com","User-Agent":"ran lu shi pin/1.0.49 (iPhone; iOS 14.1; Scale/3.00)","Content-Length":"0","Accept-Language":"zh-Hans-CN;q=1"}'))
     rlbodyArr.push($.getdata('rlbody'))
     let rlcount = ($.getval('rlcount') || '1');
   for (let i = 2; i <= rlcount; i++) {
