@@ -57,7 +57,7 @@ const jsname = '📈腾讯自选股'
 const $ = Env(jsname)
 
 const notify = $.isNode() ?require('./sendNotify') : '';
-const COOKIE = $.isNode() ? require("./txstockCOOKIE") : ``;
+const COOKIE = $.isNode() ? require("./txstockCOOKIE1") : ``;
 
 const logs = 0; //0为关闭日志，1为开启,默认为0
 const notifyInterval = 1; //0为关闭通知，1为所有通知,默认为0
@@ -81,35 +81,35 @@ if ($.isNode()) {
 
 let userheaderArr = [];
 let userheaderVal = "";
-let USERHEADER1 = [];
+let USERHEADER = [];
 
 let userkeyArr = [];
 let userkeyVal = "";
-let USERKEY1 = [];
+let USERKEY = [];
 
 let cashheaderArr = [];
 let cashheaderVal = "";
-let CASHHEADER1 = [];
+let CASHHEADER = [];
 
 let signheaderArr = [];
 let signheaderVal = "";
-let SINGHEADER1 = [];
+let SINGHEADER = [];
 
 let signkeyArr = [];
 let signkeyVal = "";
-let SINGKEY1 = [];
+let SINGKEY = [];
 
 let taskheaderArr = [];
 let taskheaderVal = "";
-let TASKHEADER1 = [];
+let TASKHEADER = [];
 
 let taskkeyArr = [];
 let taskkeyVal = "";
-let TASKKEY1 = [];
+let TASKKEY = [];
 
 let wxtaskkeyArr = [];
 let wxtaskkeyVal = "";
-let WXTASKKEY1 = [];
+let WXTASKKEY = [];
 
 ////////////////////////////////////////////////////////////////////
 
