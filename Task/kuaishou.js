@@ -8,7 +8,7 @@
 
 const $ = new Env('快手视频')
 let cookieArr = [];
-let ks_tokensQ = $.getdata('cookie_ks');
+let ks_tokensQ = $.getdata('cookie_ksQ');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const nebulaCash = $.getdata('cash_nebulaks')||"10";
 const cashType = $.getdata('tpcash_nebula')||"ALIPAY";
